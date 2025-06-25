@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Page</title>
+  <link rel="stylesheet" href="css/orders.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <form id="orderForm">
+    <h2>Order Form</h2>
+
+    <label>Customer Name:
+      <input type="text" id="customerName" required />
+    </label>
+
+    <label>Enter Address:
+      <input type="text" id="address" required />
+    </label>
+
+    <label>Phone Number:
+      <input type="text" id="phoneNumber" required />
+    </label>
+
+    <label>Product Name:
+      <input type="text" id="productName" readonly />
+    </label>
+
+    <label>Price per Item:
+      <input type="number" id="pricePerItem" readonly />
+    </label>
+
+    <label>Quantity:</label>
+    <div class="quantity-control">
+      <button type="button" onclick="decreaseQuantity()">-</button>
+      <span id="quantity">1</span>
+      <button type="button" onclick="increaseQuantity()">+</button>
+    </div>
+
+    <label>Total Price:
+      <input type="number" id="totalPrice" readonly />
+    </label>
+
+    <button type="submit">Place Order</button>
+  </form>
+
+  <script>
+    // Firebase config
+    const firebaseConfig = {
+      apiKey: "AIzaSyDyl4cFupHHvzOjeS6-f1qLWUQAo6QRQaA",
+      authDomain: "ncrestaurant-a7ff5.firebaseapp.com",
+      projectId: "ncrestaurant-a7ff5",
+      storageBucket: "ncrestaurant-a7ff5.appspot.com",
+      messagingSenderId: "174825638036",
+      appId: "1:174825638036:web:f5ae2d2505892f76434c81"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // Get data from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productName = urlParams.get('product');
+    const price = parseFloat(urlParams.get('price'));
+
+    // Fill initial values
+    document.getElementById('productName').value = productName;
+    document.getElementById('pricePerItem').value = price.toFixed(2);
+    let quantity = 1;
+
+    function updateTotalPrice() {
+      document.getElementById('totalPrice').value = (quantity * price).toFixed(2);
+      document.getElementById('quantity').innerText = quantity;
+    }
+
+    function increaseQuantity() {
+      quantity++;
+      updateTotalPrice();
+    }
+
+    function decreaseQuantity() {
+      if (quantity > 1) {
+        quantity--;
+        updateTotalPrice();
+      }
+    }
+
+    updateTotalPrice();
+
+    // Function to get Pakistan Standard Time date object
+    function getPakistanDate() {
+      const now = new Date();
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      return new Date(utc + (5 * 3600000));  // UTC +5 hours
+    }
+
+    document.getElementById('orderForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const orderData = {
+        customerName: document.getElementById('customerName').value,
+        address: document.getElementById('address').value,
+        phoneNumber: document.getElementById('phoneNumber').value,
+        productName: productName,
+        totalPrice: quantity * price,
+        quantity: quantity,
+        orderDateTime: getPakistanDate()  // Pakistan time here
+      };
+
+      db.collection('Orders').add(orderData)
+        .then(() => {
+          alert('Order placed successfully!');
+          document.getElementById('orderForm').reset();
+          quantity = 1;
+          updateTotalPrice();
+        })
+        .catch(error => {
+          console.error('Error placing order:', error);
+          alert('Something went wrong.');
+        });
+    });
+  </script>
+</body>
+</html>
