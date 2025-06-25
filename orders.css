@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2024/09/1200/675/dinner.jpg?ve=1&tl=1');
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(4px);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 450px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.quantity-control button {
+  padding: 6px 12px;
+  font-size: 16px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.quantity-control button:hover {
+  background-color: #2980b9;
+}
+
+#quantity {
+  font-weight: bold;
+  font-size: 18px;
+  width: 40px;
+  text-align: center;
+}
+
+button[type="submit"] {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: #219150;
+}

@@ -1,0 +1,165 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.my_navbar {
+    background-color: #D94F30;
+}
+
+/* Navbar brand (logo/text) */
+.my_navbar .navbar-brand {
+    color: #FFF8E1 !important;
+}
+
+/* Navbar links */
+.my_navbar .nav-link {
+    color: #FFF8E1 !important;
+}
+
+/* Active link hover/focus */
+.my_navbar .nav-link:hover,
+.my_navbar .nav-link:focus {
+    color: #FFE7BA !important; /* optional: lighter shade on hover */
+}
+
+
+.btn_nav {
+    background-color: black;
+    color: #FFE7BA;
+}
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+}
+
+
+.about-section {
+  background-color: #FFF8E1;
+  padding: 60px 0;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #d2691e;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+h3, h4 {
+  color: #d2691e;
+  margin-top: 20px;
+}
+
+p {
+  color: #444;
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 1.2s ease-in;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 1.2s ease-in;
+}
+
+.fade-in-right {
+  animation: fadeInRight 1.2s ease-in;
+}
+
+.fade-in-up {
+  animation: fadeInUp 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer */
+.footer-section {
+  background-color: #000;
+  color: #fff;
+}
+
+.footer-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.footer-links li,
+.footer-contact li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-contact li {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.sendmsg {
+    background-color: #D94F30;
+    color: #f8f9fa;
+}
+
+

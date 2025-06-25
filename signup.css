@@ -1,0 +1,31 @@
+body {
+  background: url('https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.signup-container {
+  height: 100vh;
+  backdrop-filter: blur(6px);
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 2.2rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.signup-card h3 {
+  color: #d94f30;
+  font-weight: 600;
+}
+
+.signup-card a {
+  color: #d94f30;
+  text-decoration: none;
+}

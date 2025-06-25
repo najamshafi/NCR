@@ -1,0 +1,31 @@
+body {
+  background: url('https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1316145932/image_1316145932.jpg?io=getty-c-w1536') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-container {
+  height: 100vh;
+  backdrop-filter: blur(6px);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.login-card h3 {
+  color: #d94f30;
+  font-weight: 600;
+}
+
+.login-card a {
+  color: #d94f30;
+  text-decoration: none;
+}
